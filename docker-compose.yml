@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - message_data:/app/storage
+    restart: unless-stopped
+
+volumes:
+  message_data:
+    name: message_app_data
